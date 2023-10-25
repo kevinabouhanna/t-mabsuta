@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>T-mabsuta</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="../dist/creepyface.umd.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+          <div class="floating-element">
+              <img src="img/Capa_1.png" alt="cloud" />
+          </div>  
+      </section>
+      <section class="face">
+        <img
+          data-creepyface
+          src="img/face/Default.png"
+          data-src-hover="img/face/mouseOver.png"
+          data-src-look-0="img/face/Top.png"
+          data-src-look-45="img/face/Top_Right.png"
+          data-src-look-90="img/face/Right.png"
+          data-src-look-135="img/face/Bottom_Right.png"
+          data-src-look-180="img/face/Bottom.png"
+          data-src-look-225="img/face/Bottom_Left.png"
+          data-src-look-270="img/face/Left.png"
+          data-src-look-315="img/face/Top_Left.png"
+        />
+      </section>
+      <section class="counter">
+        <div class="schools__counter">Schools +<span class="purecounter">0</span></div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+    <script>
+      new PureCounter();
+    </script>
+  </body>
+</html>

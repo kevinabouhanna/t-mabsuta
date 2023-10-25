@@ -1,0 +1,11 @@
+{
+  "packages": ["packages/*"],
+  "version": "8.2.0-alpha.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "graphType": "all"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "creepyface-monorepo",
+  "private": true,
+  "author": "Alejandro Tardín <alejandro@tardin.com>",
+  "homepage": "https://creepyface.io",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4lejandrito/creepyface.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lerna": "^5.5.0",
+    "lint-staged": ">=13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,md,json,html,css,scss,webmanifest}": "prettier --write"
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "dev": "lerna run --parallel dev",
+    "test": "lerna run test",
+    "test:coverage": "lerna run test:coverage",
+    "publish:all": "lerna publish",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

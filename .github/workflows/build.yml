@@ -1,0 +1,34 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'yarn'
+      - name: Install
+        run: yarn
+      - name: Build
+        run: yarn build
+      - name: Test
+        run: yarn workspace creepyface test
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./packages/creepyface/coverage/lcov.info
+          base-path: ./packages/creepyface
+      - name: Build Docker Image
+        uses: 4lejandrito/build-docker-image-action@main
+      - name: Test Docker Image
+        run: yarn workspace creepyface-site test:docker
+      - name: Deploy Docker Image
+        if: github.ref == 'refs/heads/master'
+        uses: 4lejandrito/deploy-docker-image-action@main
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          prune-gh-pat: ${{ secrets.PRUNE_GITHUB_TOKEN }}
