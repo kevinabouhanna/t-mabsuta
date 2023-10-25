@@ -7,7 +7,7 @@
     })
 
     it('shows the default src by default', () => {
-      cy.get('img').should('have.attr', 'src', 'img/serious.jpg')
+      cy.get('img').should('have.attr', 'src', 'img/face/Default.png')
     })
 
     describe('when the mouse moves around creepyface', () => {
@@ -25,7 +25,7 @@
               clientY: size.y + size.height / 2 + coords.y,
             })
             cy.wait(100)
-            cy.get('img').should('have.attr', 'src', `img/${name}`)
+            cy.get('img').should('have.attr', 'src', `img/face/${name}`)
           })
         }
 
@@ -36,7 +36,7 @@
             x: 0,
             y: 0,
           }),
-          `crazy.jpg`
+          `mouseOver.png`
         )
       )
 
@@ -47,7 +47,7 @@
             x: 0,
             y: -(Math.floor(height / 2) + 100),
           }),
-          `n.jpg`
+          `Top.png`
         )
       )
 
@@ -58,7 +58,7 @@
             x: Math.floor(width / 2) + 1,
             y: -(Math.floor(height / 2) + 1),
           }),
-          `ne.jpg`
+          `Top_Right.png`
         )
       )
 
@@ -69,7 +69,7 @@
             x: Math.floor(width / 2) + 10,
             y: 0,
           }),
-          `e.jpg`
+          `Right.png`
         )
       )
 
@@ -80,7 +80,7 @@
             x: Math.floor(width / 2) + 10,
             y: Math.floor(height / 2) + 10,
           }),
-          `se.jpg`
+          `Bottom_Right.png`
         )
       )
 
@@ -91,7 +91,7 @@
             x: 0,
             y: Math.floor(height / 2) + 2,
           }),
-          `s.jpg`
+          `Bottom.png`
         )
       )
 
@@ -102,7 +102,7 @@
             x: -(Math.floor(width / 2) + 1),
             y: Math.floor(height / 2) + 1,
           }),
-          `sw.jpg`
+          `Bottom_Left.png`
         )
       )
 
@@ -113,7 +113,7 @@
             x: -(Math.floor(width / 2) + 1),
             y: 0,
           }),
-          `w.jpg`
+          `Left.png`
         )
       )
 
@@ -124,13 +124,13 @@
             x: -(Math.floor(width / 2) + 1),
             y: -(Math.floor(height / 2) + 1),
           }),
-          `nw.jpg`
+          `Top_Left.png`
         )
       )
 
       it('goes back to the default src after 1 second', () => {
         cy.wait(1000)
-        cy.get('img').should('have.attr', 'src', 'img/serious.jpg')
+        cy.get('img').should('have.attr', 'src', 'img/face/Default.png')
       })
     })
   })

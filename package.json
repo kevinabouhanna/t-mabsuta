@@ -23,6 +23,8 @@
   "scripts": {
     "build": "lerna run build",
     "dev": "lerna run --parallel dev",
+    "test": "lerna run test",
+    "test:coverage": "lerna run test:coverage",
     "publish:all": "lerna publish",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
